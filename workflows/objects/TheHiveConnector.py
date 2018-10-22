@@ -74,7 +74,7 @@ class TheHiveConnector:
             flag=attributes.get('flag',False),
             tags=_tags,
             template=attributes.get('template',None)
-            )
+        )
 
         return case
 
