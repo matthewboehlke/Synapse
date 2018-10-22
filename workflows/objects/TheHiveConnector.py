@@ -66,8 +66,6 @@ class TheHiveConnector:
                 _tags.append(tag)
 
         case = Case(title=title,
-            tlp=2,
-            tags=['Synapse'],
             description=description,
             tlp=attributes.get('tlp',2),
             severity=attributes.get('severity',2),
@@ -75,7 +73,6 @@ class TheHiveConnector:
             tags=_tags,
             template=attributes.get('template',None)
         )
-
 
         return case
 
