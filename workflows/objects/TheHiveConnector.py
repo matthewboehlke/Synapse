@@ -76,6 +76,7 @@ class TheHiveConnector:
             template=attributes.get('template',None)
         )
 
+
         return case
 
     def createCase(self, case):
