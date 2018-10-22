@@ -56,13 +56,24 @@ class TheHiveConnector:
             raise ValueError('unknown use case after searching case by description')
 
 
-    def craftCase(self, title, description):
+    def craftCase(self, title, description, **attributes):
         self.logger.info('%s.craftCase starts', __name__)
+
+        _tags = ['Synapse']
+        tags = attributes.get('tags',False)
+        if tags:
+            for tag in tags:
+                _tags.append(tag)
 
         case = Case(title=title,
             tlp=2,
             tags=['Synapse'],
             description=description,
+            tlp=attributes.get('tlp',2),
+            severity=attributes.get('severity',2),
+            flag=attributes.get('flag',False),
+            tags=_tags,
+            template=attributes.get('tamplate',None)
             )
 
         return case
